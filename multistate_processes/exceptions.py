@@ -1,0 +1,3 @@
+class BarabasiAlbertModelIncorrectInput(Exception):
+    pass
+
