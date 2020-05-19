@@ -1,12 +1,13 @@
 import numpy as np
-from theory.exceptions import BarabasiAlbertModelIncorrectInput
+from multistate_processes.exceptions import BarabasiAlbertModelIncorrectInput
 from itertools import combinations
 from multistate_processes.network import Network
+
 
 class BarabasiAlbert(Network):
 
     @classmethod
-    def random_choice(cls, a, size=2):  #TODO: think about seed and if it is inherited from barabasi_albert_model()
+    def random_choice(cls, a, size=2):  # TODO: think about seed and if it is inherited from barabasi_albert_model()
         rc = np.random.choice(a, size).tolist()
 
         if len(set(rc)) == len(rc):
@@ -48,4 +49,3 @@ class BarabasiAlbert(Network):
     def __init__(self, n, m, m0=None, seed=None):
         edges = self.model(n, m, m0, seed)
         super().__init__(n, edges)
-

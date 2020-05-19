@@ -34,4 +34,4 @@ class Network:
 
         bins = np.logspace(np.log10(min_d), np.log10(10. ** m_log), m_log * 5.) if log else np.arange(min_d, max_d)
 
-        return np.histogram(degrees_list, bins=bins, density=density)
+        return np.histogram(self.degrees_list, bins=bins, density=density)
