@@ -50,8 +50,8 @@ approximation we consider following relations:
 
 The Mean Field evolution equation for ![](https://latex.codecogs.com/svg.latex?x^i_k(t)) is:
 
-![](https://latex.codecogs.com/svg.latex?\dpi{400}\frac{d}{dt}x^i_k=-\sum_{j\neq i}x^i_k\sum_{|m|=k}Mult(m,t)F_m(i{\rightarrow}j))
-![](https://latex.codecogs.com/svg.latex?+\sum_{j\neq i}x^j_k\sum_{|m|=k}Mult(m,t)F_m(j{\rightarrow}i))
+![](https://latex.codecogs.com/svg.latex?\frac{d}{dt}x^i_k=-\sum_{j{\neq}i}x^i_k\sum_{|m|=k}Mult(m,t)F_m(i{\rightarrow}j))
+![](https://latex.codecogs.com/svg.latex?+\sum_{j{\neq}i}x^j_k\sum_{|m|=k}Mult(m,t)F_m(j{\rightarrow}i))
 
 
 Or having the matrix notation:
