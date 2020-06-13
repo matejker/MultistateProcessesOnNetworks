@@ -1,1 +1,2 @@
 numpy>=1.15.2
+git+https://github.com/matejker/network.git@0.0.2
