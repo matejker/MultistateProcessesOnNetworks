@@ -38,7 +38,7 @@ A generic object for calculating multistate dynamical process which is then inhe
 approximation framework.
 
 #### `MeanField` framework
-Mean Field is the most relaxed, therefore the most rough, estimate of the dynamical process within the three 
+Mean Field is the most relaxed, therefore, the most rough estimate of the dynamical process within the three 
 approximation frameworks. Where we assume that the states of each node in the network are independent. In the Mean Field 
 approximation we consider following relations:
 
@@ -56,7 +56,7 @@ The Mean Field evolution equation for ![](https://latex.codecogs.com/svg.latex?x
 
 Or having the matrix notation:
 
-![](https://latex.codecogs.com/svg.latex?\frac{d}{dt}\mathbf{x}^i_k=\sum_{|m|=k}(\mathbf{R_m}-\mathbf{F_m^T})Mult(m,t)\mathbf{x}^i_k)
+![](https://latex.codecogs.com/svg.latex?\frac{d}{dt}\mathbf{x}^i_k=-\sum_{|m|=k}(\mathbf{R_m}-\mathbf{F_m^T})Mult(m,t)\mathbf{x}^i_k)
 
 
 
