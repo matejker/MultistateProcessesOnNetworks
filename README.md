@@ -13,7 +13,7 @@ A continuous-time multistate dynamical processes is uniquely described by collec
 where it denotes the rate at which a node in state i changes to state j as a function of the the number of node's 
 neighbors in each of n states. For matrix notation we consider a rate matrix ![](https://latex.codecogs.com/svg.latex?\big(F_m\big)_{ij}=F_m({i\rightarrow j})). An object
 `MultistateProcess` calculate transition rate matrix and transition probability matrix given the general rates and 
-neighbor's states $m$. 
+neighbor's states ![](https://latex.codecogs.com/svg.latex?m). 
 
 ![schematic-multistate-process](./doc/schematic-multistate-process.png)
 
@@ -22,7 +22,7 @@ Over the whole project we tried to use the same notation that is used in the ori
 
  - ![](https://latex.codecogs.com/svg.latex?n) - number of different states in the dynamical process  
  - ![](https://latex.codecogs.com/svg.latex?m) - vector where $m_i$ is number of node's neighbors in each of n states, (![](https://latex.codecogs.com/svg.latex?i=0,...,n-1))  
- - ![](https://latex.codecogs.com/svg.latex?F_m({i\rightarrow j})) - the rate at which a node in state i changes to state j, given the ![](https://latex.codecogs.com/svg.latex?m)  
+ - ![](https://latex.codecogs.com/svg.latex?F_m({i\rightarrow}j)) - the rate at which a node in state i changes to state j, given the ![](https://latex.codecogs.com/svg.latex?m)  
  - ![](https://latex.codecogs.com/svg.latex?N) - number of nodes in the network  
  - ![](https://latex.codecogs.com/svg.latex?k) - degree ($k_min$, $k_max$, min and max degrees)  
  - ![](https://latex.codecogs.com/svg.latex?<k>) - average degree in the network
