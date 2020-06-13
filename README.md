@@ -9,9 +9,9 @@ fundamentals of stochastic processes [2] and network theory [3].
 In this work we offer both empirical and analytical parts, therefore, we splitted the work into 4 fundamental objects:  
 
 ### `MultistateProcess` object
-A continuous-time multistate dynamical processes is uniquely described by collection of the rate functions ![](https://latex.codecogs.com/svg.latex?F_m(i\rightarrrow j)), 
+A continuous-time multistate dynamical processes is uniquely described by collection of the rate functions ![](https://latex.codecogs.com/svg.latex?F_m({i\rightarrow j})), 
 where it denotes the rate at which a node in state i changes to state j as a function of the the number of node's 
-neighbors in each of n states. For matrix notation we consider a rate matrix ![](https://latex.codecogs.com/svg.latex?\big(F_m\big)_{ij}=F_m(i\rightarrow j)). An object
+neighbors in each of n states. For matrix notation we consider a rate matrix ![](https://latex.codecogs.com/svg.latex?\big(F_m\big)_{ij}=F_m({i\rightarrow j})). An object
 `MultistateProcess` calculate transition rate matrix and transition probability matrix given the general rates and 
 neighbor's states $m$. 
 
