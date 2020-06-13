@@ -22,7 +22,7 @@ Over the whole project we tried to use the same notation that is used in the ori
 
  - ![](https://latex.codecogs.com/svg.latex?n) - number of different states in the dynamical process  
  - ![](https://latex.codecogs.com/svg.latex?m) - vector where $m_i$ is number of node's neighbors in each of n states, (![](https://latex.codecogs.com/svg.latex?i=0,...,n-1))  
- - ![](https://latex.codecogs.com/svg.latex?F_m(i\rightarrow j)) - the rate at which a node in state i changes to state j, given the ![](https://latex.codecogs.com/svg.latex?m)  
+ - ![](https://latex.codecogs.com/svg.latex?F_m({i\rightarrow j})) - the rate at which a node in state i changes to state j, given the ![](https://latex.codecogs.com/svg.latex?m)  
  - ![](https://latex.codecogs.com/svg.latex?N) - number of nodes in the network  
  - ![](https://latex.codecogs.com/svg.latex?k) - degree ($k_min$, $k_max$, min and max degrees)  
  - ![](https://latex.codecogs.com/svg.latex?<k>) - average degree in the network
@@ -48,15 +48,15 @@ approximation we consider following relations:
  - ![](https://latex.codecogs.com/svg.latex?Mult_k(m,t)=\frac{k!}{m_0!...m_{n-1}!}(\omega^0(t))^{m_0}...(\omega^{n-1}(t))^{m_{n-1}}) - probability that a k-degree node
  has m-neighbor in various states at time t  
 
-The Mean Field evolution equation for $x^i_k(t)$ is:
+The Mean Field evolution equation for ![](https://latex.codecogs.com/svg.latex?x^i_k(t)) is:
 
-![](https://latex.codecogs.com/svg.latex?\dpi{400}\frac{d}{dt}x^i_k=-\sum_{j\neq i}x^i_k\sum_{|m|=k}Mult(m,t)F_m(i\rightarrow j))
+![](https://latex.codecogs.com/svg.latex?\dpi{400}\frac{d}{dt}x^i_k=-\sum_{j\neq i}x^i_k\sum_{|m|=k}Mult(m,t)F_m({i\rightarrow j}))
 ![](https://latex.codecogs.com/svg.latex?+\sum_{j\neq i}x^j_k\sum_{|m|=k}Mult(m,t)F_m(j\rightarrow i))
 
 
 Or having the matrix notation:
 
-![](https://latex.codecogs.com/svg.latex?\frac{d}{dt}\mathbf(x)^i_k=\sum_{|m|=k}(\mathbf(R_m)-\mathbf(F_m^T))Mult(m,t)\mathbf(x)^i_k)
+![](https://latex.codecogs.com/svg.latex?\frac{d}{dt}\mathbf{x}^i_k=\sum_{|m|=k}(\mathbf{R_m}-\mathbf{F_m^T})Mult(m,t)\mathbf{x}^i_k)
 
 
 
