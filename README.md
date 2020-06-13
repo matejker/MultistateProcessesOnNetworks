@@ -50,12 +50,16 @@ approximation we consider following relations:
 
 The Mean Field evolution equation for $x^i_k(t)$ is:
 
-$$\frac{d}{dt}x^i_k = - \sum_{j \neq i}x^i_k\sum_{|m|=k}Mult(m, t)F_m(i->j) + 
-\sum_{j\neq i}x^j_k\sum_{|m|=k}Mult(m, t)F_m(j->ij)$$
+```math
+\frac{d}{dt}x^i_k = - \sum_{j \neq i}x^i_k\sum_{|m|=k}Mult(m, t)F_m(i->j) + 
+\sum_{j\neq i}x^j_k\sum_{|m|=k}Mult(m, t)F_m(j->ij)
+```
 
 Or having the matrix notation:
 
-$$\frac{d}{dt}\mathbf(x)^i_k = \sum_{|m|=k}(\mathbf(R_m) - \mathbf(F_m^T))Mult(m, t)\mathbf(x)^i_k$$
+```math
+\frac{d}{dt}\mathbf(x)^i_k = \sum_{|m|=k}(\mathbf(R_m) - \mathbf(F_m^T))Mult(m, t)\mathbf(x)^i_k$$
+```
 
 
 For more detailed description on Mean Field approximation, see the pages 10 and 11 in the original paper [1].
