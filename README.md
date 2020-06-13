@@ -20,9 +20,9 @@ neighbor's states $m$.
 #### Notation
 Over the whole project we tried to use the same notation that is used in the original paper [1].
 
- - $n$ - number of different states in the dynamical process  
+ - $`n`$ - number of different states in the dynamical process  
  - $m$ - vector where $m_i$ is number of node's neighbors in each of n states, ($i = 0, ..., n-1$)  
- - $F_m(i->j)$ - the rate at which a node in state i changes to state j, given the $m$ 
+ - $`F_m(i->j)`$ - the rate at which a node in state i changes to state j, given the $m$ 
  - $N$ - number of nodes in the network  
  - $k$ - degree ($k_min$, $k_max$, min and max degrees)  
  - $<k>$ - average degree in the network
