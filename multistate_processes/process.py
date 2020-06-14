@@ -12,7 +12,8 @@ class MultistateProcess:
     Object attributes:
         rates (np.array n x n): a rate matrix with given neighbor states interactions
         n (integer): number of states in the process
-        tau=None (np.array n x 1)
+        tau=None (np.array n x 1): length of time tau that a node is likely to remain state before they changes to
+        another state
         **kwargs: extra variables for rate matrix
 
     To use:
