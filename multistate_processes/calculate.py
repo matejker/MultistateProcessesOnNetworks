@@ -2,6 +2,7 @@ from itertools import product
 from network import Network
 from multistate_processes.process import MultistateProcess
 
+
 class CalculateProcess:
     """A generic object for calculating multistate dynamical process which is then inherited by one of the generalized
     approximation framework.
@@ -31,7 +32,8 @@ class CalculateProcess:
         return self
 
     def __next__(self):
-        self.t += 1
+        if self.t < self.t_max - 1:
+            self.t += 1
         return self
 
     def get_ms_for(self, k):

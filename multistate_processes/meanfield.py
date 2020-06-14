@@ -11,8 +11,8 @@ class MeanField(CalculateProcess):
 
     Object attributes:
         children of object CalculateProcess
-        x (np.array): a matrix (t_max x n x k_max) where x[t][i][k] is the expected fraction of k-degree nodes in state i
-        at time t
+        x (np.array): a matrix (t_max x n x k_max) where x[t][i][k] is the expected fraction of k-degree nodes in
+        state i at time t
 
     To use:
         >>> network = Network(3, [(0, 1), (2, 1)])
@@ -28,7 +28,6 @@ class MeanField(CalculateProcess):
         super().__init__(network, process, t_max)
         self.x = x
 
-
     def omegas(self, t):  # TODO: think about powerlaw, instead degree_distribution use alpha
         """Probability that the neighbor of a node is in state j at time t.
         \omega^j(t)=\sum_{k=0}^{\infty}\frac{kp_k}{<k>}x^j_k(t)
@@ -39,8 +38,8 @@ class MeanField(CalculateProcess):
         Returns:
             (np.array): omega for each state at time t
         """
-        return (np.arange(1, self.network.k_max + 1) * self.network.degree_distribution) @ self.x[t].T / self.network.mean_degree
-
+        degree_occurrence = (np.arange(1, self.network.k_max + 1) * self.network.degree_distribution)
+        return degree_occurrence @ self.x[t].T / self.network.mean_degree
 
     def mult(self, k, m, omegas):
         """Probability that a k-degree node has m-neighbor in various states at time t.
@@ -63,7 +62,7 @@ class MeanField(CalculateProcess):
         return (k_factorial * omega_product) / m_factorial_product
 
     def __next__(self):
-        if self.t > self.t_max:
+        if self.t > self.t_max - 1:
             return self.x[self.t]
 
         for i, d in enumerate(self.network.degree_distribution):

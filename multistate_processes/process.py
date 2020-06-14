@@ -6,12 +6,13 @@ class MultistateProcess:
     """A continuous-time multistate dynamical processes that is represented by the rate functions F_m(i->j), where it
     denotes the rate at which a node in state i changes to state j as a function of the the number of node's neighbors
     in each of n states. For matrix notation we consider a rate matrix (F_m)ij = F_m(i->j). An object MultistateProcess
-    has also transition matrix P with transition probabilities between states based on neighbor's states (m) and diagonal
-    matrix R where (R - F.T) forms a true transition rate matrix.
+    has also transition matrix P with transition probabilities between states based on neighbor's states (m) and
+    diagonal matrix R where (R - F.T) forms a true transition rate matrix.
 
     Object attributes:
         rates (np.array n x n): a rate matrix with given neighbor states interactions
         n (integer): number of states in the process
+        f=False (boolean): is rates the final transition rate matrix, f=True then R = np.zeros((n, n))
         tau=None (np.array n x 1): length of time tau that a node is likely to remain state before they changes to
         another state
         **kwargs: extra variables for rate matrix
@@ -33,9 +34,10 @@ class MultistateProcess:
         Springer; 2nd ed. 2012 edition (23 May 2012)
     """
 
-    def __init__(self, rates, tau=None, **kwargs):
+    def __init__(self, rates, f=False, tau=None, **kwargs):
         self.rates = rates
         self.kwargs = kwargs
+        self.f = f
 
         self.n = self.rates.shape[0]
 
@@ -68,10 +70,10 @@ class MultistateProcess:
         Args:
             m (np.array n x 1): vector of neighbor states
         Return:
-            (np.array n x n): diagonal matrix
+            (np.array n x n): diagonal matrix if f=false otherwise np.zeros((n, n))
         """
         matrix = self.get_rate_matrix(m)
-        return np.diag(matrix.sum(axis=1))
+        return np.diag(matrix.sum(axis=1)) if not self.f else np.zeros(self.rates.shape)
 
     def P(self, m):  # noqa
         """Transition matrix P with transition probabilities between states based on neighbors stats (m).
