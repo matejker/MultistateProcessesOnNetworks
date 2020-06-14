@@ -11,9 +11,8 @@ In this work we offer both empirical and analytical parts, therefore, we splitte
 ### `MultistateProcess` object
 A continuous-time multistate dynamical processes is uniquely described by collection of the rate functions ![](https://latex.codecogs.com/svg.latex?F_m(i{\rightarrow}j)), 
 where it denotes the rate at which a node in state i changes to state j as a function of the the number of node's 
-neighbors in each of n states. For matrix notation we consider a rate matrix ![](https://latex.codecogs.com/svg.latex?\big(F_m\big)_{ij}=F_m(i{\rightarrow}j)). An object
-`MultistateProcess` calculate transition rate matrix and transition probability matrix given the general rates and 
-neighbor's states ![](https://latex.codecogs.com/svg.latex?m). 
+neighbors in each of n states.  An object `MultistateProcess` calculate transition rate matrix and transition 
+probability matrix given the general rates and neighbor's states ![](https://latex.codecogs.com/svg.latex?m). 
 
 ![schematic-multistate-process](./doc/schematic-multistate-process.png)
 
@@ -57,7 +56,7 @@ The Mean Field evolution equation for ![](https://latex.codecogs.com/svg.latex?x
 
 Or having the matrix notation:
 
-![](https://latex.codecogs.com/svg.latex?\frac{d}{dt}\mathbf{x}^i_k=-\sum_{|m|=k}(\mathbf{R_m}-\mathbf{F_m^T})Mult(m,t)\mathbf{x}^i_k)
+![](https://latex.codecogs.com/svg.latex?\frac{d}{dt}\mathbf{x}^k=-\sum_{|m|=k}(\mathbf{R_m}-\mathbf{F_m^T})Mult(m,t)\mathbf{x}^k)
 
 
 
