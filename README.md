@@ -2,7 +2,7 @@
 Is a pure Python package for simulating and calculating multistate dynamical process on networks. This work is based on 
 a paper written by Peter G. Fennell and James P. Gleeson [1] where they introduced generalized approximation frameworks 
 for the study and analysis of multistate dynamical processes on networks. They presented three degree-based frameworks, 
-which allows to analyse the effects of network connectivity structures on dynamical processes. This works stands on 
+which allows to analyse the effects of network connectivity structures on dynamical processes. This work stands on
 fundamentals of stochastic processes [2] and network theory [3].
 
 ## Structure
@@ -24,7 +24,7 @@ Over the whole project we tried to use the same notation that is used in the ori
  - ![](https://latex.codecogs.com/svg.latex?m) - vector where $m_i$ is number of node's neighbors in each of n states, (![](https://latex.codecogs.com/svg.latex?i=0,...,n-1))  
  - ![](https://latex.codecogs.com/svg.latex?F_m({i\rightarrow}j)) - the rate at which a node in state i changes to state j, given the ![](https://latex.codecogs.com/svg.latex?m)  
  - ![](https://latex.codecogs.com/svg.latex?N) - number of nodes in the network  
- - ![](https://latex.codecogs.com/svg.latex?k) - degree ($k_min$, $k_max$, min and max degrees)  
+ - ![](https://latex.codecogs.com/svg.latex?k) - degree (k_min, k_max, min and max degrees)
  - ![](https://latex.codecogs.com/svg.latex?<k>) - average degree in the network
  - ![](https://latex.codecogs.com/svg.latex?p_k) - degree distribution (probability of k-degree node occurrence)  
  - ![](https://latex.codecogs.com/svg.latex?|m|=k) - all possible ms where ![](https://latex.codecogs.com/svg.latex?\sum_{i=0}^{n-1}m_i=k)
@@ -38,15 +38,16 @@ A generic object for calculating multistate dynamical process which is then inhe
 approximation framework.
 
 #### `MeanField` framework
-Mean Field is the most relaxed, therefore, the most rough estimate of the dynamical process within the three 
-approximation frameworks. Where we assume that the states of each node in the network are independent. In the Mean Field 
+Mean Field is the most relaxed, therefore, the most rough estimate of the dynamical process within the three
+approximation frameworks. Where we assume that the states of each node in the network are independent. In the Mean Field
 approximation we consider following relations:
 
  - ![](https://latex.codecogs.com/svg.latex?x^i_k(t)) - expected fraction of nodes in state i of degree k at time t  
- - ![](https://latex.codecogs.com/svg.latex?\omega^j(t)=\sum_{k=0}^{\inf}\frac{kp_k}{<k>}x^j_k(t)) - probability that the neighbor of a node is in state j
+ - ![](https://latex.codecogs.com/svg.latex?\omega^j(t)=\sum_{k=0}^{\infty}\frac{kp_k}{<k>}x^j_k(t))
+ - probability that the neighbor of a node is in state j
  at time t   
- - ![](https://latex.codecogs.com/svg.latex?Mult_k(m,t)=\frac{k!}{m_0!...m_{n-1}!}(\omega^0(t))^{m_0}...(\omega^{n-1}(t))^{m_{n-1}}) - probability that a k-degree node
- has m-neighbor in various states at time t  
+ - ![](https://latex.codecogs.com/svg.latex?Mult_k(m,t)=\frac{k!}{m_0!...m_{n-1}!}(\omega^0(t))^{m_0}...(\omega^{n-1}(t))^{m_{n-1}}) - probability
+that a k-degree node has m-neighbor in various states at time t  
 
 The Mean Field evolution equation for ![](https://latex.codecogs.com/svg.latex?x^i_k(t)) is:
 
