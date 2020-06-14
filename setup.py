@@ -12,6 +12,6 @@ setup(
     description="A generic framework for simulating and calculating multistate dynamical processes on networks.",
     author="Matej Kerekrety",
     author_email="matej.kerekrety@gmail.com",
-    packages=find_packages(exclude=("tests", "notebooks")),
+    packages=find_packages(exclude=("tests", "notebooks", )),
     install_requires=required,
 )
