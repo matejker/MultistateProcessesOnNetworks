@@ -8,7 +8,7 @@ with open("requirements/base.txt") as f:
 
 setup(
     name="mk-MultistateProcessesOnNetworks",
-    version="0.0.2",
+    version="0.0.3",
     description="A generic framework for simulating and calculating multistate dynamical processes on networks.",
     author="Matej Kerekrety",
     author_email="matej.kerekrety@gmail.com",
