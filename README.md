@@ -31,7 +31,7 @@ Over the whole project we tried to use the same notation that is used in the ori
  : number of nodes in the network  
  ![](https://latex.codecogs.com/svg.latex?k) 
  : degree (![](https://latex.codecogs.com/svg.latex?k_{min}), ![](https://latex.codecogs.com/svg.latex?k_{max}), min and max degrees)  
- ![](https://latex.codecogs.com/svg.latex?\textlangle k\textrangle) 
+ ![](https://latex.codecogs.com/svg.latex?{\textlangle}k\textrangle) 
  : average degree in the network  
  ![](https://latex.codecogs.com/svg.latex?p_k) 
  : degree distribution (probability of k-degree node occurrence)  
@@ -54,7 +54,7 @@ approximation we consider following relations:
  - expected fraction of nodes in state ![](https://latex.codecogs.com/svg.latex?i) of degree ![](https://latex.codecogs.com/svg.latex?k) at time ![](https://latex.codecogs.com/svg.latex?t)  
  ![](https://latex.codecogs.com/svg.latex?x^i_k(t))  
  - probability that the neighbor of a node is in state ![](https://latex.codecogs.com/svg.latex?j) at time ![](https://latex.codecogs.com/svg.latex?t)   
- ![](https://latex.codecogs.com/svg.latex?\omega^j(t)=\sum_{k=0}^{\infty}\frac{kp_k}{<k>}x^j_k(t))
+ ![](https://latex.codecogs.com/svg.latex?\omega^j(t)=\sum_{k=0}^{\infty}\frac{kp_k}{{\textlangle}k\textrangle}x^j_k(t))
  
 
  - probability that a k-degree node has ![](https://latex.codecogs.com/svg.latex?m)-neighbor in various states at time ![](https://latex.codecogs.com/svg.latex?t)  
