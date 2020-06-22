@@ -11,9 +11,9 @@ In this work we offer both empirical and analytical parts, therefore, we splitte
 ### `MultistateProcess` object
 A continuous-time multistate dynamical processes is uniquely described by collection of the rate functions 
 ![](https://latex.codecogs.com/svg.latex?F_m(i{\rightarrow}j)), where it denotes the rate at which a node in state 
-!](https://latex.codecogs.com/svg.latex?i) changes to state ![](https://latex.codecogs.com/svg.latex?j) as a function of 
+![](https://latex.codecogs.com/svg.latex?i) changes to state ![](https://latex.codecogs.com/svg.latex?j) as a function of 
 the the number of node's neighbors in each of ![](https://latex.codecogs.com/svg.latex?n) states 
-![](https://latex.codecogs.com/svg.latex?m).  An object `MultistateProcess` calculate transition rate matrix and 
+![](https://latex.codecogs.com/svg.latex?m).  An object `MultistateProcess` calculates transition rate matrix and 
 transition probability matrix given the general rates and neighbor's states ![](https://latex.codecogs.com/svg.latex?m). 
 
 ![schematic-multistate-process](./doc/schematic-multistate-process.png)
