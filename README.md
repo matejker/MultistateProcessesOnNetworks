@@ -31,7 +31,7 @@ Over the whole project we tried to use the same notation that is used in the ori
  : number of nodes in the network  
  ![](https://latex.codecogs.com/svg.latex?k) 
  : degree (![](https://latex.codecogs.com/svg.latex?k_{min}), ![](https://latex.codecogs.com/svg.latex?k_{max}), min and max degrees)  
- ![](https://latex.codecogs.com/svg.latex?\textlangle k\textrangle) 
+ ![](https://latex.codecogs.com/svg.latex?{\textlangle k\textrangle}) 
  : average degree in the network  
  ![](https://latex.codecogs.com/svg.latex?p_k) 
  : degree distribution (probability of k-degree node occurrence)  
