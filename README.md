@@ -9,24 +9,34 @@ fundamentals of stochastic processes [2] and network theory [3].
 In this work we offer both empirical and analytical parts, therefore, we splitted the work into 4 fundamental objects:  
 
 ### `MultistateProcess` object
-A continuous-time multistate dynamical processes is uniquely described by collection of the rate functions ![](https://latex.codecogs.com/svg.latex?F_m(i{\rightarrow}j)), 
-where it denotes the rate at which a node in state i changes to state j as a function of the the number of node's 
-neighbors in each of n states.  An object `MultistateProcess` calculate transition rate matrix and transition 
-probability matrix given the general rates and neighbor's states ![](https://latex.codecogs.com/svg.latex?m). 
+A continuous-time multistate dynamical processes is uniquely described by collection of the rate functions 
+![](https://latex.codecogs.com/svg.latex?F_m(i{\rightarrow}j)), where it denotes the rate at which a node in state 
+!](https://latex.codecogs.com/svg.latex?i) changes to state ![](https://latex.codecogs.com/svg.latex?j) as a function of 
+the the number of node's neighbors in each of ![](https://latex.codecogs.com/svg.latex?n) states 
+![](https://latex.codecogs.com/svg.latex?m).  An object `MultistateProcess` calculate transition rate matrix and 
+transition probability matrix given the general rates and neighbor's states ![](https://latex.codecogs.com/svg.latex?m). 
 
 ![schematic-multistate-process](./doc/schematic-multistate-process.png)
 
 #### Notation
 Over the whole project we tried to use the same notation that is used in the original paper [1].
 
- - ![](https://latex.codecogs.com/svg.latex?n) - number of different states in the dynamical process  
- - ![](https://latex.codecogs.com/svg.latex?m) - vector where $m_i$ is number of node's neighbors in each of n states, (![](https://latex.codecogs.com/svg.latex?i=0,...,n-1))  
- - ![](https://latex.codecogs.com/svg.latex?F_m({i\rightarrow}j)) - the rate at which a node in state i changes to state j, given the ![](https://latex.codecogs.com/svg.latex?m)  
- - ![](https://latex.codecogs.com/svg.latex?N) - number of nodes in the network  
- - ![](https://latex.codecogs.com/svg.latex?k) - degree (k_min, k_max, min and max degrees)
- - ![](https://latex.codecogs.com/svg.latex?<k>) - average degree in the network
- - ![](https://latex.codecogs.com/svg.latex?p_k) - degree distribution (probability of k-degree node occurrence)  
- - ![](https://latex.codecogs.com/svg.latex?|m|=k) - all possible ms where ![](https://latex.codecogs.com/svg.latex?\sum_{i=0}^{n-1}m_i=k)
+ ![](https://latex.codecogs.com/svg.latex?n) 
+ : number of different states in the dynamical process  
+ ![](https://latex.codecogs.com/svg.latex?m)
+ : vector where ![](https://latex.codecogs.com/svg.latex?m_i) is number of node's neighbors in each of n states, (![](https://latex.codecogs.com/svg.latex?i=0,...,n-1))  
+ ![](https://latex.codecogs.com/svg.latex?F_m({i\rightarrow}j)) 
+ : the rate at which a node in state ![](https://latex.codecogs.com/svg.latex?i) changes to state ![](https://latex.codecogs.com/svg.latex?j), given the ![](https://latex.codecogs.com/svg.latex?m)  
+ ![](https://latex.codecogs.com/svg.latex?N) 
+ : number of nodes in the network  
+ ![](https://latex.codecogs.com/svg.latex?k) 
+ : degree (![](https://latex.codecogs.com/svg.latex?k_{min}), ![](https://latex.codecogs.com/svg.latex?k_{max}), min and max degrees)  
+ ![](https://latex.codecogs.com/svg.latex?\textlangle k\textrangle) 
+ : average degree in the network  
+ ![](https://latex.codecogs.com/svg.latex?p_k) 
+ : degree distribution (probability of k-degree node occurrence)  
+ ![](https://latex.codecogs.com/svg.latex?|m|=k) 
+ : all possible ![](https://latex.codecogs.com/svg.latex?m) where ![](https://latex.codecogs.com/svg.latex?\Sigma_{i=0}^{n-1}m_i=k)  
 
 ### `SimulateProcess` object
 An object that simulates the dynamical process, knowing the network, the transition matrix and states from the previous 
@@ -41,12 +51,14 @@ Mean Field is the most relaxed, therefore, the most rough estimate of the dynami
 approximation frameworks. Where we assume that the states of each node in the network are independent. In the Mean Field
 approximation we consider following relations:
 
- - ![](https://latex.codecogs.com/svg.latex?x^i_k(t)) - expected fraction of nodes in state i of degree k at time t  
- - ![](https://latex.codecogs.com/svg.latex?\omega^j(t)=\sum_{k=0}^{\infty}\frac{kp_k}{<k>}x^j_k(t))
- - probability that the neighbor of a node is in state j
- at time t   
- - ![](https://latex.codecogs.com/svg.latex?Mult_k(m,t)=\frac{k!}{m_0!...m_{n-1}!}(\omega^0(t))^{m_0}...(\omega^{n-1}(t))^{m_{n-1}}) - probability
-that a k-degree node has m-neighbor in various states at time t  
+ - expected fraction of nodes in state ![](https://latex.codecogs.com/svg.latex?i) of degree ![](https://latex.codecogs.com/svg.latex?k) at time ![](https://latex.codecogs.com/svg.latex?t)  
+ ![](https://latex.codecogs.com/svg.latex?x^i_k(t))  
+ - probability that the neighbor of a node is in state ![](https://latex.codecogs.com/svg.latex?j) at time ![](https://latex.codecogs.com/svg.latex?t)   
+ ![](https://latex.codecogs.com/svg.latex?\omega^j(t)=\sum_{k=0}^{\infty}\frac{kp_k}{<k>}x^j_k(t))
+ 
+
+ - probability that a k-degree node has ![](https://latex.codecogs.com/svg.latex?m)-neighbor in various states at time ![](https://latex.codecogs.com/svg.latex?t)  
+ ![](https://latex.codecogs.com/svg.latex?Mult_k(m,t)=\frac{k!}{m_0!...m_{n-1}!}(\omega^0(t))^{m_0}...(\omega^{n-1}(t))^{m_{n-1}})
 
 The Mean Field evolution equation for ![](https://latex.codecogs.com/svg.latex?x^i_k(t)) is:
 
@@ -56,11 +68,11 @@ The Mean Field evolution equation for ![](https://latex.codecogs.com/svg.latex?x
 
 Or having the matrix notation:
 
-![](https://latex.codecogs.com/svg.latex?\frac{d}{dt}\mathbf{x}^k=-\sum_{|m|=k}(\mathbf{R_m}-\mathbf{F_m^T})Mult(m,t)\mathbf{x}^k)
+![](https://latex.codecogs.com/svg.latex?\frac{d}{dt}\mathbf{x}^k=-\sum_{|m|=k}(\mathbf{R_m}-\mathbf{F_m^T})Mult(m)\mathbf{x}^k)
 
 
-
-For more detailed description on Mean Field approximation, see the pages 10 and 11 in the original paper [1].
+For more detailed description on Mean Field approximation see [jupyter nootebook](./notebooks/mean_field.ipynb), or 
+follow he pages 10 and 11 in the original paper [1]. 
 
 #### `PairApproximation` framework
 TODO / not yet implemented.
@@ -79,6 +91,10 @@ pip install git+https://github.com/matejker/MultistateProcessesOnNetworks.git@0.
 ``` 
 
 ## Examples
+In order to demonstrate how it all fits together see following examples:
+ - [Epidemic SIR model](./notebooks/epidemic_sir_model.ipynb)
+ : simulation and MeanField calculation of a simple (and naive) epidemic model 
+
 
 ## Development 
 Feel more than welcome to comment, commit, raise an issue, fork or push any changes. If you decide to develop be aware of 
